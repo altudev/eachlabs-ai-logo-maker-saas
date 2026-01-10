@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "packageManager": "bun@1.2.22",
-  "workspaces": ["apps/*"],
+  "workspaces": ["apps/api", "apps/web"],
   "scripts": {
     "dev": "turbo dev --filter=api --filter=web",
     "build": "turbo build",
