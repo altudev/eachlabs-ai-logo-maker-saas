@@ -1,0 +1,433 @@
+{
+    "header": {
+        "features": "Características",
+        "showcase": "Galería",
+        "howItWorks": "Cómo Funciona",
+        "history": "Historial",
+        "createLogo": "Crear Logo",
+        "toggleTheme": "Cambiar tema",
+        "toggleMenu": "Alternar menú"
+    },
+    "hero": {
+        "badge": "Generación de Logos con IA",
+        "title1": "Crea Impresionantes",
+        "title2": "Logos en Segundos",
+        "description": "Transforma tus ideas en logos profesionales listos para usar con el poder de la IA. Sin conocimientos de diseño. Solo describe, genera y descarga.",
+        "startCreating": "Empezar a Crear",
+        "seeHowItWorks": "Mira Cómo Funciona",
+        "scroll": "Desplazarse",
+        "stats": {
+            "logosCreated": "Logos Creados",
+            "generationTime": "Tiempo de Generación",
+            "aiModels": "Modelos de IA"
+        }
+    },
+    "features": {
+        "badge": "Características",
+        "title1": "Todo lo que Necesitas para",
+        "title2": "Crear Logos Increíbles",
+        "description": "Funcionalidades potentes diseñadas para desarrolladores y emprendedores que buscan resultados profesionales sin complicaciones.",
+        "items": {
+            "aiPowered": {
+                "title": "Generación con IA",
+                "description": "Modelos avanzados de IA crean logos únicos y profesionales a partir de descripciones simples."
+            },
+            "multipleModels": {
+                "title": "Múltiples Modelos de IA",
+                "description": "Elige entre diferentes modelos de IA optimizados para varios estilos: minimalista, detallado o artístico."
+            },
+            "instantDownloads": {
+                "title": "Descargas Instantáneas",
+                "description": "Obtén tus logos al instante en formato PNG de alta resolución, listos para tiendas de aplicaciones."
+            },
+            "colorIntelligence": {
+                "title": "Inteligencia de Color",
+                "description": "Especifica los colores de tu marca y mira cómo la IA los incorpora perfectamente en tu diseño."
+            },
+            "lightningFast": {
+                "title": "Rápido como el Rayo",
+                "description": "Genera logos profesionales en menos de 60 segundos. Itera rápidamente hasta que quede perfecto."
+            },
+            "commercialReady": {
+                "title": "Listo para Uso Comercial",
+                "description": "Todos los logos generados son únicos y están listos para uso comercial en tus aplicaciones."
+            }
+        }
+    },
+    "showcase": {
+        "badge": "Galería",
+        "title1": "Obras Maestras",
+        "title2": "Generadas",
+        "description": "Logos de alta calidad listos para tu entorno de producción.",
+        "startGenerating": "Empezar a generar logos",
+        "logoNames": {
+            "financeApp": "App Financiera",
+            "healthTracker": "Monitor de Salud",
+            "musicPlayer": "Reproductor de Música",
+            "taskManager": "Gestor de Tareas",
+            "socialNetwork": "Red Social",
+            "ecommerce": "Comercio Electrónico",
+            "weatherApp": "App del Clima",
+            "fitnessCoach": "Entrenador de Fitness"
+        }
+    },
+    "howItWorks": {
+        "badge": "Cómo Funciona",
+        "title1": "Tres Pasos Simples para",
+        "title2": "Tu Logo Perfecto",
+        "description": "Sin herramientas complicadas, sin conocimientos de diseño. Solo describe, genera y descarga.",
+        "steps": {
+            "step1": {
+                "title": "Describe Tu Visión",
+                "description": "Ingresa el nombre de tu app y describe lo que quieres. Sé tan simple o detallado como desees."
+            },
+            "step2": {
+                "title": "La IA Crea Magia",
+                "description": "Nuestros modelos avanzados de IA analizan tu entrada y generan múltiples opciones de logos únicos."
+            },
+            "step3": {
+                "title": "Descarga y Usa",
+                "description": "Elige tu favorito, descárgalo en alta resolución y úsalo de inmediato."
+            }
+        }
+    },
+    "cta": {
+        "badge": "Empezar",
+        "title1": "¿Listo para Crear Tu",
+        "title2": "Logo Perfecto?",
+        "description": "Únete a miles de desarrolladores y emprendedores que ya han creado logos impresionantes con IA.",
+        "button": "Empezar a Crear Ahora",
+        "benefits": {
+            "noCreditCard": "No se requiere tarjeta de crédito",
+            "commercialUse": "Uso comercial permitido",
+            "instantDownloads": "Descargas instantáneas"
+        }
+    },
+    "footer": {
+        "tagline": "Crea logos profesionales e impresionantes con el poder de la IA. No se requieren habilidades de diseño.",
+        "sections": {
+            "product": "Producto",
+            "company": "Compañía",
+            "legal": "Legal"
+        },
+        "links": {
+            "features": "Características",
+            "showcase": "Galería",
+            "howItWorks": "Cómo Funciona",
+            "createLogo": "Crear Logo",
+            "about": "Acerca de",
+            "blog": "Blog",
+            "careers": "Carreras",
+            "contact": "Contacto",
+            "privacyPolicy": "Política de Privacidad",
+            "termsOfService": "Términos de Servicio",
+            "refundPolicy": "Política de Reembolso"
+        },
+        "copyright": "Todos los derechos reservados.",
+        "madeWith": "Impulsado por IA. Hecho con"
+    },
+    "languageSwitcher": {
+        "label": "Idioma"
+    },
+    "pricing": {
+        "badge": "Precios",
+        "title": "Paquetes de créditos para generación rápida",
+        "description": "Paquetes de créditos de pago único. 1 crédito = 1 logo (hasta 4 por ejecución). Descargas PNG y almacenamiento por 1 año incluidos.",
+        "note": "Los créditos nunca se renuevan automáticamente y se procesan mediante pago en Polar.",
+        "oneTime": "Compra única",
+        "featureReminder": "Los créditos cubren la generación con IA y descargas PNG con derechos comerciales.",
+        "actions": {
+            "buyCredits": "Comprar créditos",
+            "useCredit": "Usar crédito gratis"
+        },
+        "features": {
+            "perRun": "Hasta 4 opciones de logo por ejecución (1 crédito cada una)",
+            "commercial": "Derechos comerciales completos en cada logo",
+            "png": "Descargas PNG con vistas previas claras/oscuras",
+            "retention": "Almacenamiento por 1 año con aviso de eliminación"
+        },
+        "packages": {
+            "starter": {
+                "name": "Básico",
+                "credits": "1 crédito",
+                "price": "Gratis",
+                "description": "Bono de registro incluido: genera tu primer logo por nuestra cuenta.",
+                "badge": "Incluido"
+            },
+            "maker": {
+                "name": "Creador",
+                "credits": "10 créditos",
+                "price": "$9",
+                "description": "Genial para proyectos secundarios e iteraciones rápidas."
+            },
+            "team": {
+                "name": "Equipo",
+                "credits": "50 créditos",
+                "price": "$39",
+                "description": "Mejor valor para lanzar múltiples marcas.",
+                "badge": "Mejor valor"
+            },
+            "studio": {
+                "name": "Estudio",
+                "credits": "200 créditos",
+                "price": "$149",
+                "description": "Para agencias y equipos ocupados; cubre ejecuciones de alto volumen."
+            }
+        }
+    },
+    "privacyPolicy": {
+        "title": "Política de Privacidad",
+        "lastUpdated": "Última Actualización: Enero 2025",
+        "sections": {
+            "introduction": {
+                "title": "Introducción",
+                "content": "LogoLoco ('nosotros', 'nuestro') respeta su privacidad y se compromete a proteger sus datos personales. Esta política de privacidad explica cómo recopilamos, usamos, divulgamos y protegemos su información cuando utiliza nuestro servicio de generación de logos con IA."
+            },
+            "dataCollection": {
+                "title": "Información que Recopilamos",
+                "content": "Recopilamos los siguientes tipos de información:",
+                "items": {
+                    "name": "Nombre e información de contacto (dirección de correo electrónico) cuando crea una cuenta",
+                    "email": "Dirección de correo electrónico para gestión de cuenta y comunicaciones",
+                    "generations": "Historial de generación de logos y preferencias",
+                    "usage": "Datos de uso y análisis para mejorar nuestro servicio"
+                }
+            },
+            "dataUsage": {
+                "title": "Cómo Usamos Su Información",
+                "content": "Usamos su información para proporcionar, mantener y mejorar nuestros servicios, procesar transacciones, enviarle avisos técnicos y mensajes de soporte, y responder a sus comentarios y solicitudes."
+            },
+            "dataRetention": {
+                "title": "Retención de Datos",
+                "content": "Conservamos sus logos generados durante al menos 1 año a partir de la fecha de creación. Recibirá una notificación por correo electrónico antes de que se eliminen los logos. Los datos de la cuenta se conservan mientras su cuenta permanezca activa."
+            },
+            "yourRights": {
+                "title": "Sus Derechos",
+                "content": "Tiene los siguientes derechos con respecto a sus datos personales:",
+                "items": {
+                    "access": "Acceso - Puede solicitar acceso a sus datos personales",
+                    "correction": "Corrección - Puede actualizar o corregir su información",
+                    "deletion": "Eliminación - Puede solicitar la eliminación de su cuenta y datos",
+                    "export": "Exportación - Puede solicitar una copia de sus datos"
+                }
+            },
+            "security": {
+                "title": "Seguridad de Datos",
+                "content": "Implementamos medidas técnicas y organizativas adecuadas para proteger sus datos personales contra acceso no autorizado, alteración, divulgación o destrucción."
+            },
+            "cookies": {
+                "title": "Cookies y Rastreo",
+                "content": "Utilizamos cookies esenciales para mantener su sesión y preferencias. No utilizamos cookies de rastreo con fines publicitarios."
+            },
+            "children": {
+                "title": "Privacidad de los Niños",
+                "content": "Nuestro servicio no está destinado a niños menores de 16 años. No recopilamos a sabiendas información personal de niños menores de 16 años."
+            },
+            "international": {
+                "title": "Transferencias Internacionales de Datos",
+                "content": "Su información puede ser transferida y procesada en países distintos al suyo. Nos aseguramos de que existan las garantías adecuadas."
+            },
+            "changes": {
+                "title": "Cambios en esta Política",
+                "content": "Podemos actualizar esta política de privacidad ocasionalmente. Le notificaremos cualquier cambio publicando la nueva política en esta página."
+            },
+            "contact": {
+                "title": "Contáctenos",
+                "content": "Si tiene preguntas sobre esta política, por favor",
+                "link": "contáctenos"
+            }
+        }
+    },
+    "termsOfUse": {
+        "title": "Términos de Uso",
+        "lastUpdated": "Última Actualización: Enero 2025",
+        "sections": {
+            "acceptance": {
+                "title": "Aceptación de Términos",
+                "content": "Al acceder o utilizar LogoLoco, acepta estar sujeto a estos Términos de Uso. Si no está de acuerdo con estos términos, no utilice nuestro servicio."
+            },
+            "account": {
+                "title": "Responsabilidades de la Cuenta",
+                "content": "Usted es responsable de mantener la confidencialidad de las credenciales de su cuenta y de todas las actividades que ocurran bajo su cuenta.",
+                "items": {
+                    "accuracy": "Debe proporcionar información precisa y completa",
+                    "security": "Debe notificarnos inmediatamente cualquier uso no autorizado",
+                    "notification": "Usted es responsable de todas las actividades bajo su cuenta"
+                }
+            },
+            "credits": {
+                "title": "Sistema de Créditos",
+                "content": "LogoLoco opera con un sistema basado en créditos:",
+                "items": {
+                    "nonRefundable": "Los créditos no son reembolsables excepto cuando lo exija la ley",
+                    "nonTransferable": "Los créditos no se pueden transferir entre cuentas",
+                    "expiration": "Los créditos no caducan, pero nos reservamos el derecho de cambiar esto"
+                }
+            },
+            "generations": {
+                "title": "Generación de Logos",
+                "content": "Cuando genera logos usando nuestro servicio:",
+                "items": {
+                    "quantity": "Cada ejecución de generación produce hasta 4 variantes de logo",
+                    "commercial": "Recibe derechos comerciales completos para usar los logos generados",
+                    "ownership": "Usted es dueño de los logos que genera",
+                    "variation": "Indicaciones similares pueden producir resultados similares entre usuarios"
+                }
+            },
+            "userConduct": {
+                "title": "Conducta del Usuario",
+                "content": "Usted acepta no utilizar el servicio para:",
+                "items": {
+                    "illegal": "Generar logos con fines ilegales o dañinos",
+                    "infringement": "Infringir los derechos de propiedad intelectual de otros",
+                    "abuse": "Abusar del servicio o intentar eludir las limitaciones"
+                }
+            },
+            "prohibitedUses": {
+                "title": "Usos Prohibidos",
+                "content": "No puede utilizar el servicio para crear logos que contengan discursos de odio, contenido explícito o promuevan actividades ilegales. Nos reservamos el derecho de rechazar el servicio o eliminar contenido a nuestra discreción."
+            },
+            "intellectual": {
+                "title": "Propiedad Intelectual",
+                "content": "Todos los logos generados a través de nuestro servicio son propiedad de usted con plenos derechos comerciales. El nombre, el logo y las características del servicio de LogoLoco siguen siendo nuestra propiedad intelectual."
+            },
+            "disclaimer": {
+                "title": "Descargo de Responsabilidad del Servicio",
+                "content": "Nuestro servicio se proporciona 'tal cual' sin garantías de ningún tipo. No garantizamos que los resultados cumplan con sus requisitos o estén libres de errores."
+            },
+            "limitation": {
+                "title": "Limitación de Responsabilidad",
+                "content": "En la máxima medida permitida por la ley, LogoLoco no será responsable de ningún daño indirecto, incidental o consecuente que surja del uso de nuestro servicio."
+            },
+            "termination": {
+                "title": "Terminación",
+                "content": "Nos reservamos el derecho de suspender o terminar su cuenta en cualquier momento por violación de estos términos o por cualquier otro motivo a nuestra entera discreción."
+            },
+            "governing": {
+                "title": "Ley Aplicable",
+                "content": "Estos términos se regirán por las leyes de la jurisdicción en la que se establece LogoLoco."
+            },
+            "changes": {
+                "title": "Cambios en los Términos",
+                "content": "Podemos modificar estos términos en cualquier momento. El uso continuado del servicio después de los cambios constituye la aceptación de los nuevos términos."
+            },
+            "contact": {
+                "title": "Contáctenos",
+                "content": "Para preguntas sobre estos términos, por favor",
+                "link": "contáctenos"
+            }
+        }
+    },
+    "refundPolicy": {
+        "title": "Política de Reembolso",
+        "lastUpdated": "Última Actualización: Enero 2025",
+        "sections": {
+            "overview": {
+                "title": "Resumen",
+                "content": "LogoLoco ofrece paquetes de créditos para la generación de logos. Debido a la naturaleza digital de nuestro servicio, generalmente no hay reembolsos disponibles una vez que los créditos se han comprado o utilizado."
+            },
+            "nonRefundable": {
+                "title": "Artículos No Reembolsables",
+                "content": "Los siguientes no son elegibles para reembolsos:",
+                "items": {
+                    "digital": "Bienes y servicios digitales una vez entregados",
+                    "consumed": "Créditos que se han utilizado parcial o totalmente",
+                    "partial": "Uso parcial de paquetes de créditos"
+                }
+            },
+            "exceptions": {
+                "title": "Excepciones",
+                "content": "Se pueden considerar reembolsos en las siguientes circunstancias:",
+                "items": {
+                    "technical": "Problemas técnicos de nuestro lado que impiden la entrega del servicio",
+                    "billing": "Cargos duplicados o no autorizados",
+                    "unauthorized": "Compromiso de cuenta probado a través de verificación"
+                }
+            },
+            "freeCredit": {
+                "title": "Política de Crédito Gratis",
+                "content": "El crédito gratis proporcionado al registrarse no se puede reembolsar ni cambiar. Está destinado para que pruebe nuestro servicio sin riesgos."
+            },
+            "requests": {
+                "title": "Solicitudes de Reembolso",
+                "content": "Para solicitar un reembolso bajo circunstancias elegibles, por favor",
+                "link": "contacte a nuestro equipo de soporte",
+                "contact": "dentro de los 14 días posteriores a la compra"
+            },
+            "processing": {
+                "title": "Tiempo de Procesamiento",
+                "content": "Los reembolsos aprobados se procesarán dentro de 5-10 días hábiles. Los reembolsos se acreditarán al método de pago original."
+            },
+            "partial": {
+                "title": "Reembolsos Parciales",
+                "content": "No ofrecemos reembolsos parciales por créditos no utilizados en un paquete. Todas las ventas son finales."
+            },
+            "changes": {
+                "title": "Cambios en la Política",
+                "content": "Nos reservamos el derecho de modificar esta política de reembolso en cualquier momento. Los cambios se publicarán en esta página."
+            },
+            "contact": {
+                "title": "¿Preguntas?",
+                "content": "Si tiene preguntas sobre nuestra política de reembolso, por favor",
+                "link": "contáctenos"
+            }
+        }
+    },
+    "contact": {
+        "title": "Contáctenos",
+        "description": "¿Tiene una pregunta, comentario o necesita soporte? Nos encantaría saber de usted. Complete el formulario a continuación y nos pondremos en contacto lo antes posible.",
+        "info": {
+            "responseTitle": "Respuesta Rápida",
+            "responseTime": "Típicamente respondemos dentro de 24-48 horas en días hábiles.",
+            "emailTitle": "Envíenos un Correo",
+            "officeHoursTitle": "Horario de Atención",
+            "officeHours": "Lunes - Viernes: 9:00 AM - 6:00 PM (UTC)"
+        },
+        "form": {
+            "name": "Su Nombre",
+            "namePlaceholder": "Ingrese su nombre",
+            "email": "Dirección de Correo",
+            "emailPlaceholder": "tu@ejemplo.com",
+            "subject": "Asunto",
+            "subjectPlaceholder": "¿Con qué se relaciona esto?",
+            "message": "Mensaje",
+            "messagePlaceholder": "Cuéntenos más sobre su consulta...",
+            "submit": "Enviar Mensaje",
+            "sending": "Enviando...",
+            "sent": "¡Mensaje Enviado!",
+            "required": "* Campos requeridos"
+        }
+    },
+    "settings": {
+        "title": "Configuración",
+        "description": "Administra la configuración y preferencias de tu cuenta",
+        "account": {
+            "title": "Cuenta",
+            "description": "Administra la información de tu cuenta y la configuración de seguridad",
+            "editProfile": "Editar Perfil",
+            "changePassword": "Cambiar Contraseña"
+        },
+        "legal": {
+            "title": "Legal",
+            "description": "Ver nuestros documentos legales y políticas",
+            "links": {
+                "privacy": "Política de Privacidad",
+                "privacyDesc": "Cómo recopilamos y usamos tus datos",
+                "terms": "Términos de Uso",
+                "termsDesc": "Reglas para usar nuestro servicio",
+                "refund": "Política de Reembolso",
+                "refundDesc": "Nuestra política de reembolsos y créditos"
+            }
+        },
+        "support": {
+            "title": "Soporte",
+            "description": "Obtén ayuda con tu cuenta o nuestro servicio",
+            "contactButton": "Contactar Soporte"
+        },
+        "danger": {
+            "title": "Zona de Peligro",
+            "description": "Eliminar permanentemente tu cuenta y todos los datos asociados",
+            "deleteButton": "Eliminar Cuenta"
+        }
+    }
+}

@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { LocaleContext } from "~/components/providers/locale-provider"
+import esMessages from "./messages/es.json"
 import enMessages from "./messages/en.json"
 import trMessages from "./messages/tr.json"
 import type { Locale } from "./config"
@@ -9,16 +10,17 @@ type Messages = typeof enMessages
 const messages: Record<Locale, Messages> = {
   en: enMessages,
   tr: trMessages,
+  es: esMessages,
 }
 
 type NestedKeyOf<T, K extends string = ""> = T extends object
   ? {
-      [P in keyof T & string]: T[P] extends object
-        ? NestedKeyOf<T[P], K extends "" ? P : `${K}.${P}`>
-        : K extends ""
-        ? P
-        : `${K}.${P}`
-    }[keyof T & string]
+    [P in keyof T & string]: T[P] extends object
+    ? NestedKeyOf<T[P], K extends "" ? P : `${K}.${P}`>
+    : K extends ""
+    ? P
+    : `${K}.${P}`
+  }[keyof T & string]
   : never
 
 /**
