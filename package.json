@@ -5,7 +5,7 @@
   "packageManager": "bun@1.2.22",
   "workspaces": ["apps/*"],
   "scripts": {
-    "dev": "turbo dev",
+    "dev": "turbo dev --filter=api --filter=web",
     "build": "turbo build",
     "lint": "turbo lint",
     "start": "turbo start",
