@@ -1,0 +1,5 @@
+{
+  "strict": "Too many generation requests. Please wait before trying again.",
+  "moderate": "Too many requests. Please slow down.",
+  "relaxed": "Rate limit exceeded."
+}

@@ -6,6 +6,7 @@ import type { StatusCode } from "hono/utils/http-status"
 import { db } from "../db"
 import { logoGenerations } from "../db/schemas"
 import { getAuthUser, getUserBalance, deductCredits, addCredits } from "./credits"
+import { t, translate, getLocale } from "../i18n"
 
 const EACHLABS_API_URL = "https://api.eachlabs.ai/v1/prediction"
 
@@ -62,7 +63,7 @@ predictions.get("/", async (c) => {
     const user = await getAuthUser(c.req.raw)
 
     if (!user) {
-      return c.json({ error: "Authentication required" }, 401)
+      return c.json({ error: t(c, "errors.authRequired") }, 401)
     }
 
     const limitParam = Number.parseInt(c.req.query("limit") ?? "50", 10)
@@ -93,7 +94,7 @@ predictions.get("/", async (c) => {
   } catch (error) {
     console.error("History fetch error:", error)
     return c.json({
-      error: "Internal server error",
+      error: t(c, "errors.internalError"),
       details: error instanceof Error ? error.message : String(error),
       stack: error instanceof Error ? error.stack : undefined
     }, 500)
@@ -105,12 +106,13 @@ predictions.post("/", async (c) => {
   let userId: string | null = null
   let creditDeducted = false
   let creditsRequired = 1
+  const locale = getLocale(c)
 
   try {
     // Authenticate user
     const user = await getAuthUser(c.req.raw)
     if (!user) {
-      return c.json({ error: "Authentication required" }, 401)
+      return c.json({ error: t(c, "errors.authRequired") }, 401)
     }
     userId = user.id
 
@@ -119,7 +121,7 @@ predictions.post("/", async (c) => {
 
     if (!parsedBody.success) {
       return c.json(
-        { error: "Invalid request body", details: parsedBody.error.format() },
+        { error: t(c, "validation.invalidRequest"), details: parsedBody.error.format() },
         400
       )
     }
@@ -128,12 +130,12 @@ predictions.post("/", async (c) => {
     const apiKey = process.env.EACHLABS_API_KEY
 
     if (!apiKey) {
-      return c.json({ error: "EACHLABS_API_KEY is not set" }, 500)
+      return c.json({ error: t(c, "errors.configMissing") }, 500)
     }
 
     const selectedModel = MODEL_MAP[model]
     if (!selectedModel) {
-      return c.json({ error: "Invalid model selected" }, 400)
+      return c.json({ error: t(c, "errors.invalidModel") }, 400)
     }
 
     const parsedOutputCount = Number.parseInt(`${outputCount ?? 1}`, 10)
@@ -143,10 +145,10 @@ predictions.post("/", async (c) => {
     creditsRequired = outputCountValue
 
     // Check credit balance (1 credit per logo/output)
-    const balance = await getUserBalance(userId)
+    const balance = await getUserBalance(userId, locale)
     if (balance < creditsRequired) {
       return c.json(
-        { error: "Insufficient credits", balance, required: creditsRequired },
+        { error: t(c, "credits.insufficientCredits"), balance, required: creditsRequired },
         402
       )
     }
@@ -182,12 +184,12 @@ predictions.post("/", async (c) => {
         userId,
         creditsRequired,
         generationId,
-        `Logo generation: ${appName}`
+        translate(locale, "credits.logoGeneration", { appName })
       )
       if (!deductResult.success) {
         // Race condition - balance changed between check and deduct
         return c.json(
-          { error: "Insufficient credits", balance: deductResult.newBalance, required: creditsRequired },
+          { error: t(c, "credits.insufficientCredits"), balance: deductResult.newBalance, required: creditsRequired },
           402
         )
       }
@@ -244,7 +246,7 @@ predictions.post("/", async (c) => {
             .update(logoGenerations)
             .set({
               status: "failed",
-              error: "Failed to reach provider",
+              error: translate("en", "errors.providerUnreachable"),
               updatedAt: new Date(),
             })
             .where(eq(logoGenerations.id, generationId))
@@ -258,14 +260,14 @@ predictions.post("/", async (c) => {
         try {
           await addCredits(userId, creditsRequired, "refund", {
             logoGenerationId: generationId,
-            description: "Refund: provider unreachable",
+            description: translate(locale, "credits.refundProviderUnreachable"),
           })
         } catch (refundError) {
           console.error("Failed to refund credit:", refundError)
         }
       }
 
-      return c.json({ error: "Failed to reach provider" }, 502)
+      return c.json({ error: t(c, "errors.providerUnreachable") }, 502)
     }
 
     const prediction = await safeJson<Record<string, unknown>>(response)
@@ -277,7 +279,7 @@ predictions.post("/", async (c) => {
             .update(logoGenerations)
             .set({
               status: "failed",
-              error: "Invalid provider response",
+              error: translate("en", "errors.providerInvalidResponse"),
               updatedAt: new Date(),
             })
             .where(eq(logoGenerations.id, generationId))
@@ -291,14 +293,14 @@ predictions.post("/", async (c) => {
         try {
           await addCredits(userId, creditsRequired, "refund", {
             logoGenerationId: generationId,
-            description: "Refund: invalid provider response",
+            description: translate(locale, "credits.refundProviderInvalid"),
           })
         } catch (refundError) {
           console.error("Failed to refund credit:", refundError)
         }
       }
 
-      return c.json({ error: "Invalid provider response" }, 502)
+      return c.json({ error: t(c, "errors.providerInvalidResponse") }, 502)
     }
 
     if (!response.ok) {
@@ -325,7 +327,7 @@ predictions.post("/", async (c) => {
         try {
           await addCredits(userId, creditsRequired, "refund", {
             logoGenerationId: generationId,
-            description: "Refund: provider error",
+            description: translate(locale, "credits.refundProviderError"),
           })
         } catch (refundError) {
           console.error("Failed to refund credit:", refundError)
@@ -415,7 +417,7 @@ predictions.post("/", async (c) => {
           .update(logoGenerations)
           .set({
             status: "failed",
-            error: "Internal server error",
+            error: translate("en", "errors.internalError"),
             updatedAt: new Date(),
           })
           .where(eq(logoGenerations.id, generationId))
@@ -429,14 +431,14 @@ predictions.post("/", async (c) => {
       try {
         await addCredits(userId, creditsRequired, "refund", {
           logoGenerationId: generationId,
-          description: "Refund: internal error",
+          description: translate(locale, "credits.refundInternalError"),
         })
       } catch (refundError) {
         console.error("Failed to refund credit:", refundError)
       }
     }
 
-    return c.json({ error: "Internal server error" }, 500)
+    return c.json({ error: t(c, "errors.internalError") }, 500)
   }
 })
 
@@ -444,14 +446,14 @@ predictions.get("/:id", async (c) => {
   try {
     const parsedParams = paramsSchema.safeParse({ id: c.req.param("id") })
     if (!parsedParams.success) {
-      return c.json({ error: "Invalid prediction id" }, 400)
+      return c.json({ error: t(c, "errors.invalidPredictionId") }, 400)
     }
 
     const { id } = parsedParams.data
     const user = await getAuthUser(c.req.raw)
 
     if (!user) {
-      return c.json({ error: "Authentication required" }, 401)
+      return c.json({ error: t(c, "errors.authRequired") }, 401)
     }
 
     const [generation] = await db
@@ -464,17 +466,17 @@ predictions.get("/:id", async (c) => {
       .limit(1)
 
     if (!generation) {
-      return c.json({ error: "Prediction not found" }, 404)
+      return c.json({ error: t(c, "errors.predictionNotFound") }, 404)
     }
 
     if (generation.userId !== user.id) {
-      return c.json({ error: "Forbidden" }, 403)
+      return c.json({ error: t(c, "errors.forbidden") }, 403)
     }
 
     const apiKey = process.env.EACHLABS_API_KEY
 
     if (!apiKey) {
-      return c.json({ error: "EACHLABS_API_KEY is not set" }, 500)
+      return c.json({ error: t(c, "errors.configMissing") }, 500)
     }
 
     const response = await fetchWithTimeout(`${EACHLABS_API_URL}/${id}`, {
@@ -488,13 +490,13 @@ predictions.get("/:id", async (c) => {
     })
 
     if (!response) {
-      return c.json({ error: "Failed to reach provider" }, 502)
+      return c.json({ error: t(c, "errors.providerUnreachable") }, 502)
     }
 
     const prediction = await safeJson<Record<string, unknown>>(response)
 
     if (!prediction) {
-      return c.json({ error: "Invalid provider response" }, 502)
+      return c.json({ error: t(c, "errors.providerInvalidResponse") }, 502)
     }
 
     if (response.ok && prediction) {
@@ -537,6 +539,6 @@ predictions.get("/:id", async (c) => {
     return c.json(prediction)
   } catch (error) {
     console.error("Prediction fetch error:", error)
-    return c.json({ error: "Internal server error" }, 500)
+    return c.json({ error: t(c, "errors.internalError") }, 500)
   }
 })

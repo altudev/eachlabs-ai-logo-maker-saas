@@ -5,6 +5,7 @@ import crypto from "crypto"
 import { db } from "../db"
 import { creditTransactions, creditPackages } from "../db/schemas"
 import { addCredits } from "./credits"
+import { t, translate } from "../i18n"
 
 // ============================================================================
 // POLAR.SH WEBHOOK HANDLER
@@ -81,7 +82,7 @@ webhooks.post("/polar", async (c) => {
     if (POLAR_WEBHOOK_SECRET) {
       if (!verifyPolarSignature(rawBody, signature ?? null, POLAR_WEBHOOK_SECRET)) {
         console.error("Polar webhook signature verification failed")
-        return c.json({ error: "Invalid signature" }, 401)
+        return c.json({ error: t(c, "errors.invalidSignature") }, 401)
       }
     } else {
       console.warn("POLAR_WEBHOOK_SECRET not set - skipping signature verification")
@@ -103,7 +104,7 @@ webhooks.post("/polar", async (c) => {
     return c.json({ received: true, type: event.type })
   } catch (error) {
     console.error("Polar webhook error:", error)
-    return c.json({ error: "Webhook processing failed" }, 500)
+    return c.json({ error: t(c, "errors.webhookFailed") }, 500)
   }
 })
 
@@ -115,7 +116,7 @@ async function handleOrderCreated(c: Context, event: PolarCheckoutEvent) {
 
   if (!orderId) {
     console.error("Polar webhook: missing order ID")
-    return c.json({ error: "Missing order ID" }, 400)
+    return c.json({ error: t(c, "errors.missingOrderId") }, 400)
   }
 
   // Check idempotency - has this order already been processed?
@@ -154,14 +155,14 @@ async function handleOrderCreated(c: Context, event: PolarCheckoutEvent) {
 
   if (credits === 0) {
     console.error(`Polar webhook: could not determine credits for order ${orderId}`)
-    return c.json({ error: "Could not determine credit amount" }, 400)
+    return c.json({ error: t(c, "errors.creditsUndetermined") }, 400)
   }
 
   if (!userId) {
     console.error(`Polar webhook: missing user ID for order ${orderId}`)
     // Store the order for manual processing later
     return c.json({
-      error: "Missing user ID",
+      error: t(c, "errors.invalidUserId"),
       orderId,
       customerEmail,
       credits,
@@ -169,11 +170,11 @@ async function handleOrderCreated(c: Context, event: PolarCheckoutEvent) {
     }, 400)
   }
 
-  // Add credits to user
+  // Add credits to user (use English for stored transaction description)
   const result = await addCredits(userId, credits, "purchase", {
     polarOrderId: orderId,
     polarProductId: productId,
-    description: `Purchased ${packageName} (${credits} credits)`,
+    description: translate("en", "credits.purchaseDescription", { packageName, credits }),
     performedBy: "polar_webhook",
     metadata: {
       customerEmail,
@@ -184,7 +185,7 @@ async function handleOrderCreated(c: Context, event: PolarCheckoutEvent) {
 
   if (!result.success) {
     console.error(`Polar webhook: failed to add credits for order ${orderId}`)
-    return c.json({ error: "Failed to add credits" }, 500)
+    return c.json({ error: t(c, "credits.addFailed") }, 500)
   }
 
   console.log(`Polar webhook: added ${credits} credits for user ${userId}, order ${orderId}`)
@@ -206,11 +207,11 @@ if (process.env.NODE_ENV !== "production") {
       const { userId, credits, description } = await c.req.json()
 
       if (!userId || !credits) {
-        return c.json({ error: "userId and credits required" }, 400)
+        return c.json({ error: t(c, "credits.userIdAndCreditsRequired") }, 400)
       }
 
       const result = await addCredits(userId, credits, "adjustment_add", {
-        description: description ?? `Test credit addition`,
+        description: description ?? translate("en", "credits.testCreditAddition"),
         performedBy: "test_endpoint",
       })
 
@@ -220,7 +221,7 @@ if (process.env.NODE_ENV !== "production") {
       })
     } catch (error) {
       console.error("Test webhook error:", error)
-      return c.json({ error: "Failed to add credits" }, 500)
+      return c.json({ error: t(c, "credits.addFailed") }, 500)
     }
   })
 }

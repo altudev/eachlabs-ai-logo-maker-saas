@@ -5,6 +5,7 @@ import { z } from "zod"
 import { db } from "../db"
 import { userCreditBalances, creditTransactions } from "../db/schemas"
 import { getAuthUser, addCredits, getUserBalance } from "./credits"
+import { t } from "../i18n"
 
 type AdminUser = { id: string; email: string }
 
@@ -44,11 +45,11 @@ admin.use("*", async (c, next) => {
   const { isAdmin: isAdminUser, user } = await isAdmin(c.req.raw)
 
   if (!user) {
-    return c.json({ error: "Authentication required" }, 401)
+    return c.json({ error: t(c, "errors.authRequired") }, 401)
   }
 
   if (!isAdminUser) {
-    return c.json({ error: "Admin access required" }, 403)
+    return c.json({ error: t(c, "errors.adminRequired") }, 403)
   }
 
   // Store admin user info for later use
@@ -67,7 +68,7 @@ admin.post("/credits/adjust", async (c) => {
     const parsed = adjustCreditsSchema.safeParse(body)
 
     if (!parsed.success) {
-      return c.json({ error: "Invalid request body", details: parsed.error.format() }, 400)
+      return c.json({ error: t(c, "validation.invalidRequest"), details: parsed.error.format() }, 400)
     }
 
     const { userId, amount, type, reason } = parsed.data
@@ -81,7 +82,7 @@ admin.post("/credits/adjust", async (c) => {
       const currentBalance = await getUserBalance(userId)
       if (currentBalance < amount) {
         return c.json({
-          error: "Insufficient credits",
+          error: t(c, "credits.insufficientCredits"),
           currentBalance,
           requestedRemoval: amount,
         }, 400)
@@ -89,7 +90,7 @@ admin.post("/credits/adjust", async (c) => {
     }
 
     const result = await addCredits(userId, creditAmount, transactionType, {
-      description: `Admin adjustment: ${reason}`,
+      description: t(c, "credits.adminAdjustment", { reason }),
       performedBy: adminUser.id,
       metadata: {
         adminEmail: adminUser.email,
@@ -99,7 +100,7 @@ admin.post("/credits/adjust", async (c) => {
     })
 
     if (!result.success) {
-      return c.json({ error: "Failed to adjust credits" }, 500)
+      return c.json({ error: t(c, "credits.adjustFailed") }, 500)
     }
 
     console.log(`Admin ${adminUser.email} adjusted credits for user ${userId}: ${type} ${amount} (${reason})`)
@@ -117,7 +118,7 @@ admin.post("/credits/adjust", async (c) => {
     })
   } catch (error) {
     console.error("Failed to adjust credits:", error)
-    return c.json({ error: "Failed to adjust credits" }, 500)
+    return c.json({ error: t(c, "credits.adjustFailed") }, 500)
   }
 })
 
@@ -130,7 +131,7 @@ admin.get("/users/:userId/balance", async (c) => {
     const params = userIdParamSchema.safeParse({ userId: c.req.param("userId") })
 
     if (!params.success) {
-      return c.json({ error: "Invalid user ID" }, 400)
+      return c.json({ error: t(c, "errors.invalidUserId") }, 400)
     }
 
     const { userId } = params.data
@@ -149,13 +150,13 @@ admin.get("/users/:userId/balance", async (c) => {
       .limit(1)
 
     if (!balance) {
-      return c.json({ error: "User not found or has no credit balance" }, 404)
+      return c.json({ error: t(c, "errors.userNotFound") }, 404)
     }
 
     return c.json({ balance })
   } catch (error) {
     console.error("Failed to fetch user balance:", error)
-    return c.json({ error: "Failed to fetch user balance" }, 500)
+    return c.json({ error: t(c, "credits.fetchUserBalanceFailed") }, 500)
   }
 })
 
@@ -168,7 +169,7 @@ admin.get("/users/:userId/transactions", async (c) => {
     const params = userIdParamSchema.safeParse({ userId: c.req.param("userId") })
 
     if (!params.success) {
-      return c.json({ error: "Invalid user ID" }, 400)
+      return c.json({ error: t(c, "errors.invalidUserId") }, 400)
     }
 
     const { userId } = params.data
@@ -200,6 +201,6 @@ admin.get("/users/:userId/transactions", async (c) => {
     })
   } catch (error) {
     console.error("Failed to fetch user transactions:", error)
-    return c.json({ error: "Failed to fetch user transactions" }, 500)
+    return c.json({ error: t(c, "credits.fetchUserTransactionsFailed") }, 500)
   }
 })

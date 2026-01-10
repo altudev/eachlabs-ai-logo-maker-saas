@@ -1,4 +1,5 @@
 import type { Context, Next } from "hono"
+import { translate, getLocale, type TranslationKey } from "../i18n"
 
 interface RateLimitEntry {
   count: number
@@ -9,7 +10,7 @@ interface RateLimitConfig {
   windowMs: number // Time window in milliseconds
   maxRequests: number // Max requests per window
   keyGenerator?: (c: Context) => string // Custom key generator
-  message?: string // Custom error message
+  messageKey: TranslationKey // Translation key for error message
 }
 
 // In-memory store (for single instance deployments)
@@ -44,7 +45,7 @@ export function createRateLimiter(config: RateLimitConfig) {
     windowMs,
     maxRequests,
     keyGenerator = getClientIdentifier,
-    message = "Too many requests, please try again later",
+    messageKey,
   } = config
 
   return async (c: Context, next: Next) => {
@@ -64,6 +65,8 @@ export function createRateLimiter(config: RateLimitConfig) {
 
       if (entry.count > maxRequests) {
         const retryAfter = Math.ceil((entry.resetAt - now) / 1000)
+        const locale = getLocale(c)
+        const message = translate(locale, messageKey)
 
         return c.json(
           {
@@ -95,17 +98,17 @@ export function createRateLimiter(config: RateLimitConfig) {
 export const strictRateLimit = createRateLimiter({
   windowMs: 60_000, // 1 minute
   maxRequests: 10, // 10 requests per minute
-  message: "Too many generation requests. Please wait before trying again.",
+  messageKey: "rate-limit.strict",
 })
 
 export const moderateRateLimit = createRateLimiter({
   windowMs: 60_000, // 1 minute
   maxRequests: 30, // 30 requests per minute
-  message: "Too many requests. Please slow down.",
+  messageKey: "rate-limit.moderate",
 })
 
 export const relaxedRateLimit = createRateLimiter({
   windowMs: 60_000, // 1 minute
   maxRequests: 100, // 100 requests per minute
-  message: "Rate limit exceeded.",
+  messageKey: "rate-limit.relaxed",
 })

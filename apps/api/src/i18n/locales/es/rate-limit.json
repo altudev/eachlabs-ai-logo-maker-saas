@@ -1,0 +1,5 @@
+{
+  "strict": "Demasiadas solicitudes de generacion. Por favor espera antes de intentar de nuevo.",
+  "moderate": "Demasiadas solicitudes. Por favor reduce la velocidad.",
+  "relaxed": "Limite de solicitudes excedido."
+}

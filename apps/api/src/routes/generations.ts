@@ -5,6 +5,7 @@ import { z } from "zod"
 import { db } from "../db"
 import { logoGenerations } from "../db/schemas"
 import { getAuthUser } from "./credits"
+import { t } from "../i18n"
 
 const querySchema = z.object({
   limit: z.coerce.number().min(1).max(100).optional().default(20),
@@ -26,7 +27,7 @@ generations.get("/", async (c) => {
   const user = await getAuthUser(c.req.raw)
 
   if (!user) {
-    return c.json({ error: "Authentication required" }, 401)
+    return c.json({ error: t(c, "errors.authRequired") }, 401)
   }
 
   try {
@@ -37,7 +38,7 @@ generations.get("/", async (c) => {
     })
 
     if (!query.success) {
-      return c.json({ error: "Invalid query parameters", details: query.error.format() }, 400)
+      return c.json({ error: t(c, "errors.invalidQueryParams"), details: query.error.format() }, 400)
     }
 
     const { limit, offset, status } = query.data
@@ -85,7 +86,7 @@ generations.get("/", async (c) => {
     })
   } catch (error) {
     console.error("Failed to fetch generations:", error)
-    return c.json({ error: "Failed to fetch generations" }, 500)
+    return c.json({ error: t(c, "errors.fetchGenerationsFailed") }, 500)
   }
 })
 
@@ -97,14 +98,14 @@ generations.get("/:id", async (c) => {
   const user = await getAuthUser(c.req.raw)
 
   if (!user) {
-    return c.json({ error: "Authentication required" }, 401)
+    return c.json({ error: t(c, "errors.authRequired") }, 401)
   }
 
   try {
     const params = paramsSchema.safeParse({ id: c.req.param("id") })
 
     if (!params.success) {
-      return c.json({ error: "Invalid generation ID" }, 400)
+      return c.json({ error: t(c, "errors.invalidGenerationId") }, 400)
     }
 
     const { id } = params.data
@@ -131,12 +132,12 @@ generations.get("/:id", async (c) => {
       .limit(1)
 
     if (!generation) {
-      return c.json({ error: "Generation not found" }, 404)
+      return c.json({ error: t(c, "errors.generationNotFound") }, 404)
     }
 
     return c.json({ generation })
   } catch (error) {
     console.error("Failed to fetch generation:", error)
-    return c.json({ error: "Failed to fetch generation" }, 500)
+    return c.json({ error: t(c, "errors.fetchGenerationsFailed") }, 500)
   }
 })

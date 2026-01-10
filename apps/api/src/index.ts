@@ -9,6 +9,7 @@ import { webhooks } from "./routes/webhooks"
 import { generations } from "./routes/generations"
 import { admin } from "./routes/admin"
 import { strictRateLimit, moderateRateLimit } from "./middleware/rate-limit"
+import { i18nMiddleware } from "./i18n"
 
 const app = new Hono()
 
@@ -24,9 +25,12 @@ app.use(
     origin: allowedOrigins,
     credentials: true,
     allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowHeaders: ["Content-Type", "X-API-Key", "Authorization"],
+    allowHeaders: ["Content-Type", "X-API-Key", "Authorization", "X-Language", "Accept-Language"],
   })
 )
+
+// i18n middleware - detect language from headers
+app.use("*", i18nMiddleware())
 
 app.get("/", (c) => c.text("API is running"))
 app.get("/health", (c) => c.json({ status: "ok" }))
