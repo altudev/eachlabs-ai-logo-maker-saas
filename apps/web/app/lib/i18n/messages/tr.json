@@ -121,7 +121,7 @@
       "contact": "Iletisim",
       "privacyPolicy": "Gizlilik Politikasi",
       "termsOfService": "Kullanim Sartlari",
-      "cookiePolicy": "Cerez Politikasi"
+      "refundPolicy": "Iade Politikasi"
     },
     "copyright": "Tum haklari saklidir.",
     "madeWith": "Yapay zeka ile calisir. Sevgiyle yapildi"
@@ -173,6 +173,261 @@
         "price": "$149",
         "description": "Ajanslar ve yogun kosumlar icin."
       }
+    }
+  },
+  "privacyPolicy": {
+    "title": "Gizlilik Politikasi",
+    "lastUpdated": "Son Guncelleme: Ocak 2025",
+    "sections": {
+      "introduction": {
+        "title": "Giris",
+        "content": "LogoLoco ('biz', 'sirketimiz' veya 'bizim') gizliligimize saygi duyar ve kisisel verilerinizi korumaya onem verir. Bu gizlilik politikasi, AI logo olusturma hizmetimizi kullandiginizda bililerinizi nasil topladigimizi, kullandigimizi, actigimizi ve korudugumuzu aciklar."
+      },
+      "dataCollection": {
+        "title": "Topladigimiz Bilgiler",
+        "content": "Asagidaki bilgi turlerini topluyoruz:",
+        "items": {
+          "name": "Hesap olusturdugunuzda isim ve iletisim bilgileri (e-posta adresi)",
+          "email": "Hesap yonetimi ve iletisimler icin e-posta adresi",
+          "generations": "Logo olusturma gecmisi ve tercihleri",
+          "usage": "Hizmetimizi gelistirmek icin kullanim verileri ve analitikler"
+        }
+      },
+      "dataUsage": {
+        "title": "Bilgilerinizi Kullanim Seklimiz",
+        "content": "Bilgilerinizi hizmetlerimizi saglamak, bakimini yapmak ve gelistirmek, islemleri gerceklestirmek, teknik bildirimler ve destek mesajlari gondermek ve yorumlariniza ve isteklerinize yanit vermak icin kullaniriz."
+      },
+      "dataRetention": {
+        "title": "Veri Saklama",
+        "content": "Olusturdugunuz logolari olusturma tarihinden itibaren en az 1 yil saklariz. Herhangi bir logo silinmeden once e-posta bildirimi alirsiniz. Hesap verileri, hesabiniz aktif oldugu surece saklanir."
+      },
+      "yourRights": {
+        "title": "Haklariniz",
+        "content": "Kisisel verilerinizin asagidaki haklarina sahipsiniz:",
+        "items": {
+          "access": "Erisim - Kisisel verilerinize erisim isteyebilirsiniz",
+          "correction": "Duzeltme - Bilgilerinizi guncelleyebilir veya duzeltebilirsiniz",
+          "deletion": "Silme - Hesabinizi ve verilerinizi silinmesini isteyebilirsiniz",
+          "export": "Dışa aktarma - Verilerinizin bir kopyasini isteyebilirsiniz"
+        }
+      },
+      "security": {
+        "title": "Veri Guvenligi",
+        "content": "Kisisel verilerinizi yetkisiz erisim, degisiklik, ifsa veya yok olmaya karsi korumak icin uygun teknik ve organizasyonel onlemler uyguluyoruz."
+      },
+      "cookies": {
+        "title": "Cerezler ve Izleme",
+        "content": "Oturumunuzu ve tercihlerinizi korumak icin gerekli cerezler kullanıyoruz. Reklam amacli izleme cerezleri kullanmiyoruz."
+      },
+      "children": {
+        "title": "Cocuklarin Gizliligi",
+        "content": "Hizmetimiz 16 yas altindaki cocuklar icin tasarlanmamistir. 16 yas altindan cocuklardan bilerek kisisel bilgi toplamiyoruz."
+      },
+      "international": {
+        "title": "Uluslararasi Veri Transferleri",
+        "content": "Bilgileriniz kendi ulkenizden farkli ulkelere aktarilabilir ve islenebilir. Uygun guvenlik onlemlerinin yerinde oldugundan emin oluyoruz."
+      },
+      "changes": {
+        "title": "Politikadaki Degisiklikler",
+        "content": "Bu gizlilik politikasini zaman zaman guncelleyebiliriz. Degisiklikleri bu sayfada yeni politikayi yayinlayarak size bildirecegiz."
+      },
+      "contact": {
+        "title": "Bize Ulasin",
+        "content": "Bu politikayla ilgili sorulariniz varsa, lutfen",
+        "link": "bize ulasin"
+      }
+    }
+  },
+  "termsOfUse": {
+    "title": "Kullanim Sartlari",
+    "lastUpdated": "Son Guncelleme: Ocak 2025",
+    "sections": {
+      "acceptance": {
+        "title": "Sartlari Kabul",
+        "content": "LogoLoco'ya eriserek veya kullanarak bu Kullanim Sartlari'na baglanmayi kabul edersiniz. Bu sartlari kabul etmiyorsaniz, lutfen hizmetimizi kullanmayin."
+      },
+      "account": {
+        "title": "Hesap Sorumluluklari",
+        "content": "Hesap kimlik bilgilerinizin gizliligini korumak ve hesabiniz altinda gerceklelesen tum aktivitelerden sorumlusunuz.",
+        "items": {
+          "accuracy": "Dogru ve tam bilgi saglamalisiniz",
+          "security": "Yetkisiz kullanimi hemen bize bildirmelisiniz",
+          "notification": "Hesabiniz altindaki tum aktivitelerden sorumlusunuz"
+        }
+      },
+      "credits": {
+        "title": "Kredi Sistemi",
+        "content": "LogoLoco kredi tabanli bir sistemde calisir:",
+        "items": {
+          "nonRefundable": "Krediler kanun tarafindan istendigi haric iade edilmez",
+          "nonTransferable": "Krediler hesaplar arasinda transfer edilemez",
+          "expiration": "Kredilerin sureleri dolmaz ancak bu hakki degistirmeyi sakli tutariz"
+        }
+      },
+      "generations": {
+        "title": "Logo Olusturma",
+        "content": "Hizmetimizi kullanarak logo olusturdugunuzda:",
+        "items": {
+          "quantity": "Her olusturma calismasi 4'e kadar logo varyanti uretirir",
+          "commercial": "Olusturulan logolari kullanmak icin tam ticari haklar alirsiniz",
+          "ownership": "Olusturdugunuz logolara sahipsinuz",
+          "variation": "Benzer istemler kullanicilar arasinda benzer sonuclar uretebilir"
+        }
+      },
+      "userConduct": {
+        "title": "Kullanici Davranişi",
+        "content": "Hizmeti kullanmayi kabul edersiniz:",
+        "items": {
+          "illegal": "Yasal veya zararli amaclar icin logo olusturmak",
+          "infringement": "Baskalarin fikri mülkiyet haklarini ihlal etmek",
+          "abuse": "Hizmeti suistimal etmek veya sinirlarini asmaya calismak"
+        }
+      },
+      "prohibitedUses": {
+        "title": "Yasak Kullanimlar",
+        "content": "Hizmeti nefret sozu, açık icerik iceren veya yasal aktiviteleri teşvik eden logolar olusturmak icin kullanamazsiniz. Hizmeti reddetme veya icerigi kaldirma hakkinizi sakli tutariz."
+      },
+      "intellectual": {
+        "title": "Fikri Mülkiyet",
+        "content": "Hizmetimiz araciligiyla olusturulan tum logolar size tam ticari haklar ile aittir. LogoLoco adi, logosu ve hizmet ozellikleri bizim fikri mülkiyetimizde kalir."
+      },
+      "disclaimer": {
+        "title": "Hizmet Feragat",
+        "content": "Hizmetimiz oldugu gibi, herhangi bir tur garanti olmadan saglanir. Sonuclarlarin gereksinimlerinizi karsilayacagini veya hatasiz olacagini garanti etmiyoruz."
+      },
+      "limitation": {
+        "title": "Sorumluluk Sinirlamasi",
+        "content": "Kanunlarla izin verdigi azami olcude, LogoLoco hizmetimizin kullanimindan kaynaklanan dolayli, arizi veya ozel hasarlar için sorumlu tutulamaz."
+      },
+      "termination": {
+        "title": "Fesih",
+        "content": "Bu sartlari ihlal etmeniz veya baska herhangi bir nedenle hesabinizi her zaman askiya alma veya sonlandirma hakkinizi sakli tutariz."
+      },
+      "governing": {
+        "title": "Yonunen Hukuk",
+        "content": "Bu sartlar, LogoLoco'nun kuruldugi yargi alaninin kanunlara tabidir."
+      },
+      "changes": {
+        "title": "Sartlarda Degisiklikler",
+        "content": "Bu sartlari her zaman degistirebiliriz. Degisikliklerden sonra hizmetin kullanilmasi yeni sartlari kabul ettiginizi gostergesidir."
+      },
+      "contact": {
+        "title": "Bize Ulasin",
+        "content": "Bu sartlarla ilgili sorulariniz icin lutfen",
+        "link": "bize ulasin"
+      }
+    }
+  },
+  "refundPolicy": {
+    "title": "Iade Politikasi",
+    "lastUpdated": "Son Guncelleme: Ocak 2025",
+    "sections": {
+      "overview": {
+        "title": "Genel Bakis",
+        "content": "LogoLoco logo olusturma icin kredi paketleri sunar. Hizmetimizin dijital dogasi nedeniyle, krediler satin alindiktan veya kullanildiktan sonra iadeler genellikle mevcut degildir."
+      },
+      "nonRefundable": {
+        "title": "Iade Edilemez Ogeler",
+        "content": "Asagidakiler iade icin uygun degildir:",
+        "items": {
+          "digital": "Teslim edildikten sonra dijital urunler ve hizmetler",
+          "consumed": "Kismen veya tamamen kullanilan krediler",
+          "partial": "Kredi paketlerinin kismi kullanimi"
+        }
+      },
+      "exceptions": {
+        "title": "Istisnalar",
+        "content": "Asagidaki durumlarda iadeler dusunulebilir:",
+        "items": {
+          "technical": "Hizmet teslimatini engelleyen teknik sorunlar",
+          "billing": "Yinelenen veya yetkisiz ucretler",
+          "unauthorized": "Dogrulama yoluyla kanitlanan hesap ihlali"
+        }
+      },
+      "freeCredit": {
+        "title": "Ucretsiz Kredi Politikasi",
+        "content": "Kayitta saglanan ucretsiz kredi iade edilemez veya degistirilemez. Hizmetimizi risksiz denemeniz icin amaçlanmistir."
+      },
+      "requests": {
+        "title": "Iade Istekleri",
+        "content": "Uygun durumlarda iade istemek icin lutfen",
+        "link": "destek ekibimizle iletisime gecin",
+        "contact": "satin almadan itibaren 14 gun icinde"
+      },
+      "processing": {
+        "title": "Isleme Suresi",
+        "content": "Onaylanan iadeler 5-10 is gunu icinde islenir. Iadeler odeme yontemine iade edilir."
+      },
+      "partial": {
+        "title": "Kismi Iadeler",
+        "content": "Bir paketteki kullanilmayan krediler icin kismi iade sunmuyoruz. Tum satislar nihaidir."
+      },
+      "changes": {
+        "title": "Politika Degisiklikleri",
+        "content": "Bu iade politikasini her zaman degistirme hakkinizi sakli tutariz. Degisiklikler bu sayfada yayinlanacaktir."
+      },
+      "contact": {
+        "title": "Sorular?",
+        "content": "Iade politikamiz hakkinda sorulariniz varsa, lutfen",
+        "link": "bize ulasin"
+      }
+    }
+  },
+  "contact": {
+    "title": "Bize Ulasin",
+    "description": "Bir sorunuz, geri bildiriminiz veya destege mi ihtiyaciniz var? Sizinle tanismaktan mutluluk duyariz. Asagidaki formu doldurun ve size en kisa surede donecegiz.",
+    "info": {
+      "responseTitle": "Hizli Yanit",
+      "responseTime": "Genellikle is gunlerinde 24-48 saat icinde yanit veriyoruz.",
+      "emailTitle": "Bize E-posta Gonderin",
+      "officeHoursTitle": "Calisma Saatleri",
+      "officeHours": "Pazartesi - Cuma: 09:00 - 18:00 (UTC)"
+    },
+    "form": {
+      "name": "Adiniz",
+      "namePlaceholder": "Adinizi girin",
+      "email": "E-posta Adresi",
+      "emailPlaceholder": "sizin@ornek.com",
+      "subject": "Konu",
+      "subjectPlaceholder": "Bu neyle ilgili?",
+      "message": "Mesaj",
+      "messagePlaceholder": "Sorgunuz hakkinda daha fazla bilgi verin...",
+      "submit": "Mesaj Gonder",
+      "sending": "Gonderiliyor...",
+      "sent": "Mesaj Gonderildi!",
+      "required": "* Zorunlu alanlar"
+    }
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "description": "Hesap ayarlarinizi ve tercihlerinizi yonetin",
+    "account": {
+      "title": "Hesap",
+      "description": "Hesap bilgilerinizi ve guvenlik ayarlarinizi yonetin",
+      "editProfile": "Profili Duzenle",
+      "changePassword": "Sifre Degistir"
+    },
+    "legal": {
+      "title": "Yasal",
+      "description": "Yasal belgelerimizi ve politikalarimizi goruntuleyin",
+      "links": {
+        "privacy": "Gizlilik Politikasi",
+        "privacyDesc": "Verilerinizi nasil topluyoruz ve kullaniyoruzuz",
+        "terms": "Kullanim Sartlari",
+        "termsDesc": "Hizmetimizi kullanmak icin kurallar",
+        "refund": "Iade Politikasi",
+        "refundDesc": "Iade ve kredi politikamiz"
+      }
+    },
+    "support": {
+      "title": "Destek",
+      "description": "Hesabiniz veya hizmetimiz hakkinda yardim alin",
+      "contactButton": "Destek ile Iletisime Gecin"
+    },
+    "danger": {
+      "title": "Tehlike Bolgesi",
+      "description": "Hesabinizi ve tum ilgili verileri kalici olarak silin",
+      "deleteButton": "Hesabi Sil"
     }
   }
 }

@@ -121,7 +121,7 @@
       "contact": "Contact",
       "privacyPolicy": "Privacy Policy",
       "termsOfService": "Terms of Service",
-      "cookiePolicy": "Cookie Policy"
+      "refundPolicy": "Refund Policy"
     },
     "copyright": "All rights reserved.",
     "madeWith": "Powered by AI. Made with"
@@ -173,6 +173,261 @@
         "price": "$149",
         "description": "For agencies and busy teams; covers high-volume runs."
       }
+    }
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last Updated: January 2025",
+    "sections": {
+      "introduction": {
+        "title": "Introduction",
+        "content": "LogoLoco ('we', 'our', or 'us') respects your privacy and is committed to protecting your personal data. This privacy policy explains how we collect, use, disclose, and safeguard your information when you use our AI logo generation service."
+      },
+      "dataCollection": {
+        "title": "Information We Collect",
+        "content": "We collect the following types of information:",
+        "items": {
+          "name": "Name and contact information (email address) when you create an account",
+          "email": "Email address for account management and communications",
+          "generations": "Logo generation history and preferences",
+          "usage": "Usage data and analytics to improve our service"
+        }
+      },
+      "dataUsage": {
+        "title": "How We Use Your Information",
+        "content": "We use your information to provide, maintain, and improve our services, process transactions, send you technical notices and support messages, and respond to your comments and requests."
+      },
+      "dataRetention": {
+        "title": "Data Retention",
+        "content": "We retain your generated logos for at least 1 year from the date of creation. You will receive an email notification before any logos are deleted. Account data is retained for as long as your account remains active."
+      },
+      "yourRights": {
+        "title": "Your Rights",
+        "content": "You have the following rights regarding your personal data:",
+        "items": {
+          "access": "Access - You can request access to your personal data",
+          "correction": "Correction - You can update or correct your information",
+          "deletion": "Deletion - You can request deletion of your account and data",
+          "export": "Export - You can request a copy of your data"
+        }
+      },
+      "security": {
+        "title": "Data Security",
+        "content": "We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction."
+      },
+      "cookies": {
+        "title": "Cookies and Tracking",
+        "content": "We use essential cookies to maintain your session and preferences. We do not use tracking cookies for advertising purposes."
+      },
+      "children": {
+        "title": "Children's Privacy",
+        "content": "Our service is not intended for children under 16. We do not knowingly collect personal information from children under 16."
+      },
+      "international": {
+        "title": "International Data Transfers",
+        "content": "Your information may be transferred to and processed in countries other than your own. We ensure appropriate safeguards are in place."
+      },
+      "changes": {
+        "title": "Changes to This Policy",
+        "content": "We may update this privacy policy from time to time. We will notify you of any changes by posting the new policy on this page."
+      },
+      "contact": {
+        "title": "Contact Us",
+        "content": "If you have questions about this policy, please",
+        "link": "contact us"
+      }
+    }
+  },
+  "termsOfUse": {
+    "title": "Terms of Use",
+    "lastUpdated": "Last Updated: January 2025",
+    "sections": {
+      "acceptance": {
+        "title": "Acceptance of Terms",
+        "content": "By accessing or using LogoLoco, you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use our service."
+      },
+      "account": {
+        "title": "Account Responsibilities",
+        "content": "You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.",
+        "items": {
+          "accuracy": "You must provide accurate and complete information",
+          "security": "You must notify us immediately of any unauthorized use",
+          "notification": "You are responsible for all activities under your account"
+        }
+      },
+      "credits": {
+        "title": "Credit System",
+        "content": "LogoLoco operates on a credit-based system:",
+        "items": {
+          "nonRefundable": "Credits are non-refundable except as required by law",
+          "nonTransferable": "Credits cannot be transferred between accounts",
+          "expiration": "Credits do not expire but we reserve the right to change this"
+        }
+      },
+      "generations": {
+        "title": "Logo Generation",
+        "content": "When you generate logos using our service:",
+        "items": {
+          "quantity": "Each generation run produces up to 4 logo variants",
+          "commercial": "You receive full commercial rights to use generated logos",
+          "ownership": "You own the logos you generate",
+          "variation": "Similar prompts may produce similar results across users"
+        }
+      },
+      "userConduct": {
+        "title": "User Conduct",
+        "content": "You agree not to use the service to:",
+        "items": {
+          "illegal": "Generate logos for illegal or harmful purposes",
+          "infringement": "Infringe on intellectual property rights of others",
+          "abuse": "Abuse the service or attempt to circumvent limitations"
+        }
+      },
+      "prohibitedUses": {
+        "title": "Prohibited Uses",
+        "content": "You may not use the service to create logos that contain hate speech, explicit content, or promote illegal activities. We reserve the right to refuse service or remove content at our discretion."
+      },
+      "intellectual": {
+        "title": "Intellectual Property",
+        "content": "All logos generated through our service are owned by you with full commercial rights. The LogoLoco name, logo, and service features remain our intellectual property."
+      },
+      "disclaimer": {
+        "title": "Service Disclaimer",
+        "content": "Our service is provided 'as is' without warranties of any kind. We do not guarantee that results will meet your requirements or be error-free."
+      },
+      "limitation": {
+        "title": "Limitation of Liability",
+        "content": "To the fullest extent permitted by law, LogoLoco shall not be liable for any indirect, incidental, or consequential damages arising from use of our service."
+      },
+      "termination": {
+        "title": "Termination",
+        "content": "We reserve the right to suspend or terminate your account at any time for violation of these terms or for any other reason at our sole discretion."
+      },
+      "governing": {
+        "title": "Governing Law",
+        "content": "These terms shall be governed by the laws of the jurisdiction in which LogoLoco is established."
+      },
+      "changes": {
+        "title": "Changes to Terms",
+        "content": "We may modify these terms at any time. Continued use of the service after changes constitutes acceptance of the new terms."
+      },
+      "contact": {
+        "title": "Contact Us",
+        "content": "For questions about these terms, please",
+        "link": "contact us"
+      }
+    }
+  },
+  "refundPolicy": {
+    "title": "Refund Policy",
+    "lastUpdated": "Last Updated: January 2025",
+    "sections": {
+      "overview": {
+        "title": "Overview",
+        "content": "LogoLoco offers credit packages for logo generation. Due to the digital nature of our service, refunds are generally not available once credits have been purchased or used."
+      },
+      "nonRefundable": {
+        "title": "Non-Refundable Items",
+        "content": "The following are not eligible for refunds:",
+        "items": {
+          "digital": "Digital goods and services once delivered",
+          "consumed": "Credits that have been partially or fully used",
+          "partial": "Partial use of credit packages"
+        }
+      },
+      "exceptions": {
+        "title": "Exceptions",
+        "content": "Refunds may be considered in the following circumstances:",
+        "items": {
+          "technical": "Technical issues on our end that prevent service delivery",
+          "billing": "Duplicate or unauthorized charges",
+          "unauthorized": "Account compromise proven through verification"
+        }
+      },
+      "freeCredit": {
+        "title": "Free Credit Policy",
+        "content": "The free credit provided upon signup cannot be refunded or exchanged. It is intended for you to try our service risk-free."
+      },
+      "requests": {
+        "title": "Refund Requests",
+        "content": "To request a refund under eligible circumstances, please",
+        "link": "contact our support team",
+        "contact": "within 14 days of purchase"
+      },
+      "processing": {
+        "title": "Processing Time",
+        "content": "Approved refunds will be processed within 5-10 business days. Refunds will be credited to the original payment method."
+      },
+      "partial": {
+        "title": "Partial Refunds",
+        "content": "We do not offer partial refunds for unused credits in a package. All sales are final."
+      },
+      "changes": {
+        "title": "Policy Changes",
+        "content": "We reserve the right to modify this refund policy at any time. Changes will be posted on this page."
+      },
+      "contact": {
+        "title": "Questions?",
+        "content": "If you have questions about our refund policy, please",
+        "link": "contact us"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Have a question, feedback, or need support? We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.",
+    "info": {
+      "responseTitle": "Quick Response",
+      "responseTime": "We typically respond within 24-48 hours on business days.",
+      "emailTitle": "Email Us",
+      "officeHoursTitle": "Office Hours",
+      "officeHours": "Monday - Friday: 9:00 AM - 6:00 PM (UTC)"
+    },
+    "form": {
+      "name": "Your Name",
+      "namePlaceholder": "Enter your name",
+      "email": "Email Address",
+      "emailPlaceholder": "you@example.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "What is this regarding?",
+      "message": "Message",
+      "messagePlaceholder": "Tell us more about your inquiry...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "sent": "Message Sent!",
+      "required": "* Required fields"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "description": "Manage your account settings and preferences",
+    "account": {
+      "title": "Account",
+      "description": "Manage your account information and security settings",
+      "editProfile": "Edit Profile",
+      "changePassword": "Change Password"
+    },
+    "legal": {
+      "title": "Legal",
+      "description": "View our legal documents and policies",
+      "links": {
+        "privacy": "Privacy Policy",
+        "privacyDesc": "How we collect and use your data",
+        "terms": "Terms of Use",
+        "termsDesc": "Rules for using our service",
+        "refund": "Refund Policy",
+        "refundDesc": "Our refund and credit policy"
+      }
+    },
+    "support": {
+      "title": "Support",
+      "description": "Get help with your account or our service",
+      "contactButton": "Contact Support"
+    },
+    "danger": {
+      "title": "Danger Zone",
+      "description": "Permanently delete your account and all associated data",
+      "deleteButton": "Delete Account"
     }
   }
 }
