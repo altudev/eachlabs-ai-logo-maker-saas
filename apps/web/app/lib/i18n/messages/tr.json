@@ -1,0 +1,178 @@
+{
+  "header": {
+    "features": "Ozellikler",
+    "showcase": "Vitrin",
+    "howItWorks": "Nasil Calisir",
+    "history": "Gecmis",
+    "createLogo": "Logo Olustur",
+    "toggleTheme": "Tema degistir",
+    "toggleMenu": "Menu ac/kapat"
+  },
+  "hero": {
+    "badge": "Yapay Zeka Destekli Logo Olusturma",
+    "title1": "Saniyeler Icinde",
+    "title2": "Etkileyici Logolar",
+    "description": "Fikirlerinizi yapay zekanin gucuyle profesyonel, uygulama icin hazir logolara donusturun. Tasarim becerisi gerektirmez. Sadece tarif edin, olusturun ve indirin.",
+    "startCreating": "Olusturmaya Basla",
+    "seeHowItWorks": "Nasil Calistigini Gor",
+    "scroll": "Kaydir",
+    "stats": {
+      "logosCreated": "Olusturulan Logo",
+      "generationTime": "Olusturma Suresi",
+      "aiModels": "Yapay Zeka Modeli"
+    }
+  },
+  "features": {
+    "badge": "Ozellikler",
+    "title1": "Ihtiyaciniz Olan Her Sey",
+    "title2": "Muhtesem Logolar Icin",
+    "description": "Profesyonel sonuclar isteyen gelistiriciler ve girisimciler icin tasarlanmis guclu ozellikler.",
+    "items": {
+      "aiPowered": {
+        "title": "Yapay Zeka Destekli Uretim",
+        "description": "Gelismis yapay zeka modelleri basit metin aciklamalarindan benzersiz, profesyonel logolar olusturur."
+      },
+      "multipleModels": {
+        "title": "Birden Fazla Yapay Zeka Modeli",
+        "description": "Farkli stiller icin optimize edilmis yapay zeka modelleri arasinda secim yapin - minimalist, detayli veya sanatsal."
+      },
+      "instantDownloads": {
+        "title": "Aninda Indirme",
+        "description": "Logolarinizi aninda yuksek cozunurluklu PNG formatinda, uygulama magazalari icin hazir alin."
+      },
+      "colorIntelligence": {
+        "title": "Renk Zekasi",
+        "description": "Marka renklerinizi belirtin ve yapay zekanin bunlari tasariminiza sorunsuzca dahil etmesini izleyin."
+      },
+      "lightningFast": {
+        "title": "Yildirim Hizinda",
+        "description": "60 saniyenin altinda profesyonel logolar olusturun. Mukemmel olana kadar hizla yineleyin."
+      },
+      "commercialReady": {
+        "title": "Ticari Kullanima Hazir",
+        "description": "Tum olusturulan logolar benzersizdir ve uygulamalarinizda ticari kullanim icin hazirdir."
+      }
+    }
+  },
+  "showcase": {
+    "badge": "Vitrin",
+    "title1": "Olusturulan",
+    "title2": "Saheserler",
+    "description": "Uretim ortaminiz icin hazir yuksek kaliteli logolar.",
+    "startGenerating": "Logo olusturmaya basla",
+    "logoNames": {
+      "financeApp": "Finans Uygulamasi",
+      "healthTracker": "Saglik Takibi",
+      "musicPlayer": "Muzik Calari",
+      "taskManager": "Gorev Yoneticisi",
+      "socialNetwork": "Sosyal Ag",
+      "ecommerce": "E-ticaret",
+      "weatherApp": "Hava Durumu",
+      "fitnessCoach": "Fitness Koci"
+    }
+  },
+  "howItWorks": {
+    "badge": "Nasil Calisir",
+    "title1": "Mukemmel Logonuz Icin",
+    "title2": "Uc Basit Adim",
+    "description": "Karmasik araclar yok, tasarim becerisi gerekmiyor. Sadece tarif edin, olusturun ve indirin.",
+    "steps": {
+      "step1": {
+        "title": "Vizyonunuzu Tanitin",
+        "description": "Uygulama adinizi girin ve ne istediginizi tarif edin. Istediginiz kadar basit veya detayli olabilir."
+      },
+      "step2": {
+        "title": "Yapay Zeka Sihir Yapar",
+        "description": "Gelismis yapay zeka modellerimiz girdiginizi analiz eder ve birden fazla benzersiz logo secenegi olusturur."
+      },
+      "step3": {
+        "title": "Indir ve Kullan",
+        "description": "Favorisinizi secin, yuksek cozunurlukle indirin ve hemen kullanin."
+      }
+    }
+  },
+  "cta": {
+    "badge": "Baslayin",
+    "title1": "Mukemmel Logonuzu",
+    "title2": "Olusturmaya Hazir misiniz?",
+    "description": "Yapay zeka ile etkileyici logolar olusturmus binlerce gelistirici ve girisimciye katlin.",
+    "button": "Simdi Olusturmaya Basla",
+    "benefits": {
+      "noCreditCard": "Kredi karti gerektirmez",
+      "commercialUse": "Ticari kullanima izin verilir",
+      "instantDownloads": "Aninda indirme"
+    }
+  },
+  "footer": {
+    "tagline": "Yapay zekanin gucuyle etkileyici, profesyonel logolar olusturun. Tasarim becerisi gerektirmez.",
+    "sections": {
+      "product": "Urun",
+      "company": "Sirket",
+      "legal": "Yasal"
+    },
+    "links": {
+      "features": "Ozellikler",
+      "showcase": "Vitrin",
+      "howItWorks": "Nasil Calisir",
+      "createLogo": "Logo Olustur",
+      "about": "Hakkimizda",
+      "blog": "Blog",
+      "careers": "Kariyer",
+      "contact": "Iletisim",
+      "privacyPolicy": "Gizlilik Politikasi",
+      "termsOfService": "Kullanim Sartlari",
+      "cookiePolicy": "Cerez Politikasi"
+    },
+    "copyright": "Tum haklari saklidir.",
+    "madeWith": "Yapay zeka ile calisir. Sevgiyle yapildi"
+  },
+  "languageSwitcher": {
+    "label": "Dil"
+  },
+  "pricing": {
+    "badge": "Fiyatlandirma",
+    "title": "Hizli logo icin kredi paketleri",
+    "description": "Tek seferlik kredi paketleri. 1 kredi = 1 logo cikisi (her kosumda 4 adede kadar). PNG indirme ve 1 yillik saklama dahildir.",
+    "note": "Krediler otomatik yenilenmez ve Polar odemesiyle islenir.",
+    "oneTime": "Tek seferlik satin alma",
+    "featureReminder": "Krediler yapay zeka uretimi ve ticari hakli PNG indirmelerini kapsar.",
+    "actions": {
+      "buyCredits": "Kredi satin al",
+      "useCredit": "Ucretsiz krediyi kullan"
+    },
+    "features": {
+      "perRun": "Her kosumda 4 logo secenegi (her biri 1 kredi)",
+      "commercial": "Her logo icin tam ticari haklar",
+      "png": "Acik/koyu onizlemeli PNG indirmeleri",
+      "retention": "1 yillik saklama ve silme bildirimi"
+    },
+    "packages": {
+      "starter": {
+        "name": "Baslangic",
+        "credits": "1 kredi",
+        "price": "Ucretsiz",
+        "description": "Kayit bonusu dahil—ilk logonu bizden al.",
+        "badge": "Dahil"
+      },
+      "maker": {
+        "name": "Maker",
+        "credits": "10 kredi",
+        "price": "$9",
+        "description": "Yan projeler ve hizli yinelemeler icin."
+      },
+      "team": {
+        "name": "Ekip",
+        "credits": "50 kredi",
+        "price": "$39",
+        "description": "Birden fazla marka icin en iyi deger.",
+        "badge": "En iyi deger"
+      },
+      "studio": {
+        "name": "Studyo",
+        "credits": "200 kredi",
+        "price": "$149",
+        "description": "Ajanslar ve yogun kosumlar icin."
+      }
+    }
+  }
+}

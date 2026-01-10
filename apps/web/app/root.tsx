@@ -5,12 +5,20 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "react-router";
+  useFetcher,
+  useLoaderData,
+} from "react-router"
 import { QueryClientProvider } from "@tanstack/react-query"
+import { useTheme } from "react-router-theme"
 
-import type { Route } from "./+types/root";
-import { createQueryClient } from "~/lib/query-client";
-import "./app.css";
+import type { Route } from "./+types/root"
+import { createQueryClient } from "~/lib/query-client"
+import { LocaleProvider } from "~/components/providers/locale-provider"
+import { ThemeContext } from "~/lib/theme-context"
+import "./app.css"
+
+// Re-export loader and action from react-router-theme
+export { loader, action } from "react-router-theme"
 
 const queryClient = createQueryClient()
 
@@ -25,11 +33,15 @@ export const links: Route.LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
-];
+]
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const loaderData = useLoaderData() as { theme: string } | undefined
+  const fetcher = useFetcher()
+  const [theme, setTheme] = useTheme(loaderData ?? { theme: "light" }, fetcher, "light")
+
   return (
-    <html lang="en">
+    <html lang="en" data-theme={theme}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -37,36 +49,40 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <ThemeContext.Provider value={{ theme, setTheme }}>
+          {children}
+        </ThemeContext.Provider>
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
-  );
+  )
 }
 
 export default function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <Outlet />
-    </QueryClientProvider>
+    <LocaleProvider>
+      <QueryClientProvider client={queryClient}>
+        <Outlet />
+      </QueryClientProvider>
+    </LocaleProvider>
   )
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
-  let message = "Oops!";
-  let details = "An unexpected error occurred.";
-  let stack: string | undefined;
+  let message = "Oops!"
+  let details = "An unexpected error occurred."
+  let stack: string | undefined
 
   if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? "404" : "Error";
+    message = error.status === 404 ? "404" : "Error"
     details =
       error.status === 404
         ? "The requested page could not be found."
-        : error.statusText || details;
+        : error.statusText || details
   } else if (import.meta.env.DEV && error && error instanceof Error) {
-    details = error.message;
-    stack = error.stack;
+    details = error.message
+    stack = error.stack
   }
 
   return (
@@ -79,5 +95,5 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
         </pre>
       )}
     </main>
-  );
+  )
 }

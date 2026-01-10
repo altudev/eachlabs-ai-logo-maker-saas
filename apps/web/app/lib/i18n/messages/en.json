@@ -1,0 +1,178 @@
+{
+  "header": {
+    "features": "Features",
+    "showcase": "Showcase",
+    "howItWorks": "How It Works",
+    "history": "History",
+    "createLogo": "Create Logo",
+    "toggleTheme": "Toggle theme",
+    "toggleMenu": "Toggle menu"
+  },
+  "hero": {
+    "badge": "AI-Powered Logo Generation",
+    "title1": "Create Stunning",
+    "title2": "Logos in Seconds",
+    "description": "Transform your ideas into professional, app-ready logos with the power of AI. No design skills needed. Just describe, generate, and download.",
+    "startCreating": "Start Creating",
+    "seeHowItWorks": "See How It Works",
+    "scroll": "Scroll",
+    "stats": {
+      "logosCreated": "Logos Created",
+      "generationTime": "Generation Time",
+      "aiModels": "AI Models"
+    }
+  },
+  "features": {
+    "badge": "Features",
+    "title1": "Everything You Need to",
+    "title2": "Create Amazing Logos",
+    "description": "Powerful features designed for developers and entrepreneurs who want professional results without the hassle.",
+    "items": {
+      "aiPowered": {
+        "title": "AI-Powered Generation",
+        "description": "Advanced AI models create unique, professional logos from simple text descriptions."
+      },
+      "multipleModels": {
+        "title": "Multiple AI Models",
+        "description": "Choose from different AI models optimized for various styles - minimalist, detailed, or artistic."
+      },
+      "instantDownloads": {
+        "title": "Instant Downloads",
+        "description": "Get your logos instantly in high-resolution PNG format, ready for app stores."
+      },
+      "colorIntelligence": {
+        "title": "Color Intelligence",
+        "description": "Specify your brand colors and watch AI incorporate them seamlessly into your design."
+      },
+      "lightningFast": {
+        "title": "Lightning Fast",
+        "description": "Generate professional logos in under 60 seconds. Iterate quickly until perfect."
+      },
+      "commercialReady": {
+        "title": "Commercial Ready",
+        "description": "All generated logos are unique and ready for commercial use in your applications."
+      }
+    }
+  },
+  "showcase": {
+    "badge": "Showcase",
+    "title1": "Generated",
+    "title2": "Masterpieces",
+    "description": "High-quality logos ready for your production environment.",
+    "startGenerating": "Start generating logos",
+    "logoNames": {
+      "financeApp": "Finance App",
+      "healthTracker": "Health Tracker",
+      "musicPlayer": "Music Player",
+      "taskManager": "Task Manager",
+      "socialNetwork": "Social Network",
+      "ecommerce": "E-commerce",
+      "weatherApp": "Weather App",
+      "fitnessCoach": "Fitness Coach"
+    }
+  },
+  "howItWorks": {
+    "badge": "How It Works",
+    "title1": "Three Simple Steps to",
+    "title2": "Your Perfect Logo",
+    "description": "No complicated tools, no design skills needed. Just describe, generate, and download.",
+    "steps": {
+      "step1": {
+        "title": "Describe Your Vision",
+        "description": "Enter your app name and describe what you want. Be as simple or detailed as you like."
+      },
+      "step2": {
+        "title": "AI Creates Magic",
+        "description": "Our advanced AI models analyze your input and generate multiple unique logo options."
+      },
+      "step3": {
+        "title": "Download & Use",
+        "description": "Pick your favorite, download in high resolution, and use it immediately."
+      }
+    }
+  },
+  "cta": {
+    "badge": "Get Started",
+    "title1": "Ready to Create Your",
+    "title2": "Perfect Logo?",
+    "description": "Join thousands of developers and entrepreneurs who have already created stunning logos with AI.",
+    "button": "Start Creating Now",
+    "benefits": {
+      "noCreditCard": "No credit card needed",
+      "commercialUse": "Commercial use allowed",
+      "instantDownloads": "Instant downloads"
+    }
+  },
+  "footer": {
+    "tagline": "Create stunning, professional logos with the power of AI. No design skills required.",
+    "sections": {
+      "product": "Product",
+      "company": "Company",
+      "legal": "Legal"
+    },
+    "links": {
+      "features": "Features",
+      "showcase": "Showcase",
+      "howItWorks": "How It Works",
+      "createLogo": "Create Logo",
+      "about": "About",
+      "blog": "Blog",
+      "careers": "Careers",
+      "contact": "Contact",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service",
+      "cookiePolicy": "Cookie Policy"
+    },
+    "copyright": "All rights reserved.",
+    "madeWith": "Powered by AI. Made with"
+  },
+  "languageSwitcher": {
+    "label": "Language"
+  },
+  "pricing": {
+    "badge": "Pricing",
+    "title": "Credit packs built for fast logo runs",
+    "description": "One-time credit packs. 1 credit = 1 logo output (up to 4 per run). PNG downloads and 1-year storage included.",
+    "note": "Credits never auto-renew and are processed via Polar checkout.",
+    "oneTime": "One-time purchase",
+    "featureReminder": "Credits cover AI generation and PNG downloads with commercial rights.",
+    "actions": {
+      "buyCredits": "Buy credits",
+      "useCredit": "Use free credit"
+    },
+    "features": {
+      "perRun": "Up to 4 logo options per run (1 credit each)",
+      "commercial": "Full commercial rights on every logo",
+      "png": "PNG downloads with light/dark previews",
+      "retention": "1-year storage with deletion notice"
+    },
+    "packages": {
+      "starter": {
+        "name": "Starter",
+        "credits": "1 credit",
+        "price": "Free",
+        "description": "Included signup bonus—generate your first logo on us.",
+        "badge": "Included"
+      },
+      "maker": {
+        "name": "Maker",
+        "credits": "10 credits",
+        "price": "$9",
+        "description": "Great for side projects and quick iterations."
+      },
+      "team": {
+        "name": "Team",
+        "credits": "50 credits",
+        "price": "$39",
+        "description": "Best value for shipping multiple brands.",
+        "badge": "Best value"
+      },
+      "studio": {
+        "name": "Studio",
+        "credits": "200 credits",
+        "price": "$149",
+        "description": "For agencies and busy teams; covers high-volume runs."
+      }
+    }
+  }
+}

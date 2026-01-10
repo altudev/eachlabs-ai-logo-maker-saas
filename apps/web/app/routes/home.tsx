@@ -1,13 +1,37 @@
-import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import type { Route } from "./+types/home"
+import {
+  Header,
+  HeroSection,
+  FeaturesSection,
+  ShowcaseSection,
+  HowItWorksSection,
+  PricingSection,
+  CTASection,
+  Footer,
+} from "~/components/landing"
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
-  ];
+    { title: "LogoLoco - AI Logo Generator" },
+    {
+      name: "description",
+      content:
+        "Create stunning, professional logos with the power of AI. No design skills required.",
+    },
+  ]
 }
 
 export default function Home() {
-  return <Welcome />;
+  return (
+    <main className="min-h-screen bg-background">
+      <Header />
+      <HeroSection />
+      <FeaturesSection />
+      <ShowcaseSection />
+      <HowItWorksSection />
+      <PricingSection />
+      <CTASection />
+      <Footer />
+    </main>
+  )
 }
