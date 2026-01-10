@@ -1,0 +1,5 @@
+{
+  "strict": "Cok fazla olusturma istegi. Lutfen tekrar denemeden once bekleyin.",
+  "moderate": "Cok fazla istek. Lutfen yavaslayin.",
+  "relaxed": "Istek limiti asildi."
+}

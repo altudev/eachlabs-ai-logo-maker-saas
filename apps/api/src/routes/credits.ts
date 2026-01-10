@@ -4,6 +4,7 @@ import { eq, desc, sql } from "drizzle-orm"
 import { db } from "../db"
 import { userCreditBalances, creditTransactions, creditPackages } from "../db/schemas"
 import { auth } from "../auth"
+import { t, translate, type SupportedLocale } from "../i18n"
 
 type CreditTransactionType =
   | "signup_bonus"
@@ -31,7 +32,7 @@ export async function getAuthUser(req: Request) {
  * Initialize a user's credit balance with signup bonus (1 free credit)
  * This is idempotent - will not create duplicate records
  */
-export async function initializeUserCredits(userId: string): Promise<void> {
+export async function initializeUserCredits(userId: string, locale: SupportedLocale = "en"): Promise<void> {
   const existing = await db
     .select({ userId: userCreditBalances.userId })
     .from(userCreditBalances)
@@ -43,6 +44,8 @@ export async function initializeUserCredits(userId: string): Promise<void> {
   }
 
   const now = new Date()
+  const descriptionKey = SIGNUP_BONUS_CREDITS === 1 ? "credits.welcomeBonus" : "credits.welcomeBonusPlural"
+  const description = translate(locale, descriptionKey, { count: SIGNUP_BONUS_CREDITS })
 
   await db.transaction(async (tx) => {
     await tx.insert(userCreditBalances).values({
@@ -60,7 +63,7 @@ export async function initializeUserCredits(userId: string): Promise<void> {
       type: "signup_bonus",
       amount: SIGNUP_BONUS_CREDITS,
       balanceAfter: SIGNUP_BONUS_CREDITS,
-      description: `Welcome bonus - ${SIGNUP_BONUS_CREDITS} free credit${SIGNUP_BONUS_CREDITS === 1 ? "" : "s"}`,
+      description,
       performedBy: "system",
       createdAt: now,
     })
@@ -71,8 +74,8 @@ export async function initializeUserCredits(userId: string): Promise<void> {
  * Get a user's current credit balance
  * Initializes the user if they don't exist yet
  */
-export async function getUserBalance(userId: string): Promise<number> {
-  await initializeUserCredits(userId)
+export async function getUserBalance(userId: string, locale: SupportedLocale = "en"): Promise<number> {
+  await initializeUserCredits(userId, locale)
 
   const [result] = await db
     .select({ balance: userCreditBalances.balance })
@@ -99,7 +102,7 @@ export async function deductCredits(
   userId: string,
   amount: number,
   logoGenerationId: string,
-  description?: string
+  description: string
 ): Promise<{ success: boolean; newBalance: number }> {
   const now = new Date()
 
@@ -135,7 +138,7 @@ export async function deductCredits(
       amount: -amount,
       balanceAfter: newBalance,
       logoGenerationId,
-      description: description ?? `Logo generation`,
+      description,
       performedBy: "system",
       createdAt: now,
     })
@@ -154,16 +157,18 @@ export async function addCredits(
   options: {
     polarOrderId?: string
     polarProductId?: string
-    description?: string
+    description: string
     performedBy?: string
     metadata?: Record<string, unknown>
     logoGenerationId?: string
-  } = {}
+    locale?: SupportedLocale
+  }
 ): Promise<{ success: boolean; newBalance: number }> {
   const now = new Date()
+  const locale = options.locale ?? "en"
 
   // Initialize user if needed
-  await initializeUserCredits(userId)
+  await initializeUserCredits(userId, locale)
 
   return await db.transaction(async (tx) => {
     // Lock the row
@@ -202,7 +207,7 @@ export async function addCredits(
       polarOrderId: options.polarOrderId,
       polarProductId: options.polarProductId,
       logoGenerationId: options.logoGenerationId,
-      description: options.description ?? `Added ${amount} credits`,
+      description: options.description,
       performedBy: options.performedBy ?? "system",
       metadata: options.metadata,
       createdAt: now,
@@ -226,11 +231,12 @@ credits.get("/balance", async (c) => {
   const user = await getAuthUser(c.req.raw)
 
   if (!user) {
-    return c.json({ error: "Unauthorized" }, 401)
+    return c.json({ error: t(c, "errors.unauthorized") }, 401)
   }
 
   try {
-    const balance = await getUserBalance(user.id)
+    const locale = c.get("locale") ?? "en"
+    const balance = await getUserBalance(user.id, locale)
 
     const [stats] = await db
       .select({
@@ -248,7 +254,7 @@ credits.get("/balance", async (c) => {
     })
   } catch (error) {
     console.error("Failed to fetch balance:", error)
-    return c.json({ error: "Failed to fetch balance" }, 500)
+    return c.json({ error: t(c, "credits.fetchBalanceFailed") }, 500)
   }
 })
 
@@ -260,7 +266,7 @@ credits.get("/transactions", async (c) => {
   const user = await getAuthUser(c.req.raw)
 
   if (!user) {
-    return c.json({ error: "Unauthorized" }, 401)
+    return c.json({ error: t(c, "errors.unauthorized") }, 401)
   }
 
   try {
@@ -287,7 +293,7 @@ credits.get("/transactions", async (c) => {
     return c.json({ transactions })
   } catch (error) {
     console.error("Failed to fetch transactions:", error)
-    return c.json({ error: "Failed to fetch transactions" }, 500)
+    return c.json({ error: t(c, "credits.fetchTransactionsFailed") }, 500)
   }
 })
 
@@ -313,6 +319,6 @@ credits.get("/packages", async (c) => {
     return c.json({ packages })
   } catch (error) {
     console.error("Failed to fetch packages:", error)
-    return c.json({ error: "Failed to fetch packages" }, 500)
+    return c.json({ error: t(c, "credits.fetchPackagesFailed") }, 500)
   }
 })
